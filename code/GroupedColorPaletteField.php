@@ -3,7 +3,7 @@
 /**
  * Class GroupedColorPaletteField
  */
-class GroupedColorPaletteField extends DropdownField
+class GroupedColorPaletteField extends GroupedDropdownField
 {
     /**
      * @param array $properties
@@ -104,7 +104,7 @@ class GroupedColorPaletteField_Readonly extends LookupField
 
         return parent::Field($properties);
     }
-    
+
     /**
      * Gets the label of the group that the color appears in
      * @return string
@@ -112,7 +112,7 @@ class GroupedColorPaletteField_Readonly extends LookupField
     public function getSelectedGroup()
     {
         $source = $this->getSource();
-        
+
         if ($source) {
             foreach($source as $groupName => $values) {
                 if (is_array($values)) {
